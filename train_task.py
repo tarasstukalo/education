@@ -16,13 +16,13 @@ def stat(trip_stat: dict) -> dict:
         statistics.update(({key: {"max_s": max_speed(value), "avg_s": avg_speed(value)}}))
     return statistics
 
+if __name__ == "__main__":
+    my_stat = {
+            "I": [40.4, 28.9, 67.1, 21.3],
+            "II": [85.7, 78.3, 71.8, 51.3],
+            "III": [36.2, 65.2, 76.2, 90.4],
+            "VI": [56.4, 61.1, 76.2, 86.6, ],
+    }
 
-my_stat = {
-        "I": [40.4, 28.9, 67.1, 21.3],
-        "II": [85.7, 78.3, 71.8, 51.3],
-        "III": [36.2, 65.2, 76.2, 90.4],
-        "VI": [56.4, 61.1, 76.2, 86.6, ],
-}
-
-result = stat(my_stat)
-print(result)
+    result = stat(my_stat)
+    print(result)
