@@ -1,4 +1,5 @@
 import pprint
+from email.contentmanager import raw_data_manager
 from functools import total_ordering
 from sys import orig_argv
 
@@ -26,45 +27,51 @@ def month_stat(points: dict) -> tuple:
                         "Загальна сума": summa,
                         "Максимальний бал": max_speed(value),
                         "Мінімальний бал": min(value),
-                        "Середній бал": avg(value)
+                            "Середній бал": avg(value)
                     }
             }
         )
     return total_stat, total_points
 
-def all_stat(stat: dict) -> dict:
-    month_stat()
-    max_points = []
-    min_points = []
-    avg_points = []
-    total_avg_points = avg(total_points)
-    for lesson_stat in total_stat.values():
-        max_points.append(lesson_stat["Максимальний бал"])
-        min_points.append(lesson_stat["Мінімальний бал"]),
-        avg_points.append(lesson_stat["Середній бал"])
-    lessons_stat = {
-        "Загальна статистика": {
-            "Загальна сума": sum(total_points),
-            "Максимальний бал": max(max_points),
-            "Мінімальний бал": min(min_points),
-            "Середній бал": total_avg_points,
-            "Підвищена степендія": has_increased_scholarship(total_avg_points)
+# def all_stat(stat: dict) -> dict:
+#     month_stat()
+#     max_points = []
+#     min_points = []
+#     avg_points = []
+#     total_avg_points = avg(total_points)
+#     for lesson_stat in total_stat.values():
+#         max_points.append(lesson_stat["Максимальний бал"])
+#         min_points.append(lesson_stat["Мінімальний бал"]),
+#         avg_points.append(lesson_stat["Середній бал"])
+#     lessons_stat = {
+#         "Загальна статистика": {
+#             "Загальна сума": sum(total_points),
+#             "Максимальний бал": max(max_points),
+#             "Мінімальний бал": min(min_points),
+#             "Середній бал": total_avg_points,
+#             "Підвищена степендія": has_increased_scholarship(total_avg_points)
+#
+#         }
+#     }
+#
+#     return lessons_stat
 
-        }
-    }
-
-    return lessons_stat
-
-def main_func():
-    month_stat(my_month_stat())
+def main_func(raw_data: dict) -> tuple:
+    dicts, int_values = month_stat(raw_data)
+    return month_stat(raw_data)
 
 if __name__ == "__main__":
-    # my_month_stat = {
-    #     "Українська мова": [10, 11, 12, 10, 10, 12],
-    #     "Алгебра": [12, 10, 10, 11, 10, 10],
-    #     "Фізика": [10, 10, 12, 11, 11, 10],
-    #     "Історія": [8, 5, 7, 10, 12, 3]
-    # }
-    print()
-    my_res = month_stat(my_month_stat)
+    my_month_stat = {
+        "Українська мова": [10, 11, 12, 10, 10, 12],
+        "Алгебра": [12, 10, 10, 11, 10, 10],
+        "Фізика": [10, 10, 12, 11, 11, 10],
+        "Історія": [8, 5, 7, 10, 12, 3]
+    }
+
+    first, second = main_func(my_month_stat)
+
+    print(first, second)
+
+
+    # my_res = month_stat(my_month_stat)
     # pprint.pprint(my_res)
