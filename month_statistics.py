@@ -5,9 +5,12 @@ from train_task import max_speed
 def avg(nums: list[int]) -> int | float:
     return sum(nums) / len(nums)
 
-def has_increased_scholarship(num: int | float) -> str:
+def has_increased_scholarship(num: int | float) -> dict | str:
     if num >= 10:
-        return "Так, є підвищена степендія"
+        # return {"Підвиждена стипендія: "Так, є підвищена степендія",
+        return {
+            "Відсоток підвищення": "30%"
+        }
     else:
         return "Ні, немає"
 
@@ -34,6 +37,7 @@ def all_stat(stat: dict, all_points: list) -> dict:
     max_points = []
     min_points = []
     avg_points = []
+
     total_avg_points = avg(all_points)
     for lesson_stat in stat.values():
         max_points.append(lesson_stat["Максимальний бал"]),
@@ -62,7 +66,7 @@ if __name__ == "__main__":
         "Українська мова": [10, 11, 12, 10, 10, 12],
         "Алгебра": [12, 10, 10, 11, 10, 10],
         "Фізика": [10, 10, 12, 11, 11, 10],
-        "Історія": [8, 5, 7, 10, 12, 3]
+        "Історія": [8, 5, 7, 10, 12, 12]
     }
 
     res = main_func(my_month_stat) #s1
