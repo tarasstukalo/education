@@ -1,5 +1,12 @@
 void setup() {  
   Serial.begin(9600);
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
 }
 
 void loop() {
@@ -13,6 +20,7 @@ for(int i = 0; i <=15; i += 1) {
     digitalWrite(6, LOW);
     digitalWrite(7, LOW);
     digitalWrite(8, HIGH);
+    continue;
   }
   else if(i == 1) 
     Serial.println("0x6: 110");
@@ -170,6 +178,6 @@ for(int i = 0; i <=15; i += 1) {
     digitalWrite(7, LOW);
     digitalWrite(8, LOW);
   }
-  delay(500);
+  delay(1000);
 }
 }
