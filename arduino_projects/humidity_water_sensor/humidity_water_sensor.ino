@@ -11,7 +11,7 @@ void loop() {
   Serial.println(water);
 
   if (water > 200) {
-    digitalWrite(LED_BUILTIN, HIGH);
+    digitalWrite(LED_BUILTIN, HIGH);    
   } else {
     digitalWrite(LED_BUILTIN, LOW);
   }
