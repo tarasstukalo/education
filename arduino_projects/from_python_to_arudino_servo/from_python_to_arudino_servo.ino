@@ -12,16 +12,7 @@ void setup() {
 void loop() {
   if (Serial.available()) {
     x = Serial.readString().toInt();
-
-    if (x == 0) {
-      myServo.write(0);
-      delay(20);
-    } else if (x == 90) {
-      myServo.write(90);
-      delay(20);
-    } else if (x == 180) {
-      myServo.write(180);
+      myServo.write(x);
       delay(20);
     }
   }
-}
