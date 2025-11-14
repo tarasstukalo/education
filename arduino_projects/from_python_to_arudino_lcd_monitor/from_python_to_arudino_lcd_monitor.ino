@@ -23,7 +23,7 @@ void setup() {
 void loop() {
   if (Serial.available()) {
     input = Serial.readString();
-    input.trim();  // прибирає \n і пробіли
+    input.trim();
 
     bool isNumber = true;
     for (unsigned int i = 0; i < input.length(); i++) {
