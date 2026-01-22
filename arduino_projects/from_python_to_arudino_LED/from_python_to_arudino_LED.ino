@@ -18,13 +18,13 @@ void loop() {
   digitalWrite(11, LOW);
 
   if (x == 1) {
-    digitalWrite(9, HIGH); //blue 001
+    digitalWrite(10, HIGH); //red 001
   }
   if (x == 2) {
-    digitalWrite(10, HIGH); //red 010
+    digitalWrite(11, HIGH); //green 010
   }
   if (x == 3) {
-    digitalWrite(11, HIGH); //green 011
+    digitalWrite(9, HIGH); //blue 011
   }
   if (x == 4) {
     digitalWrite(9, HIGH); //pink 100
@@ -38,7 +38,7 @@ void loop() {
     digitalWrite(11, HIGH); // light blue 110
     digitalWrite(9, HIGH);
   }
-    if (x == 6) {
+    if (x == 7) {
     digitalWrite(11, HIGH); // white 111
     digitalWrite(10, HIGH);
     digitalWrite(9, HIGH);
