@@ -31,8 +31,8 @@ def write_read(message: str):
 
 
 if __name__ == "__main__":
-    #print("Bot is started!")
-    #bot.polling(none_stop=True, interval=1, timeout=60)
+    print("Bot is started!")
+    bot.polling(none_stop=True, interval=1, timeout=60)
     print("prog is started")
     write_read()
 
