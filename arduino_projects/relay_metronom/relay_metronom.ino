@@ -42,23 +42,34 @@ void loop() {
     digitalWrite(8, HIGH);
     digitalWrite(9, HIGH);
 
-if (takt == 1) {
+if (takt == 1) {        // 1
+  digitalWrite(2, HIGH);
   digitalWrite(3, LOW);
-  digitalWrite(5, LOW);
-}
-else if (takt == 2) {
-  digitalWrite(2, LOW);
   digitalWrite(4, LOW);
-  digitalWrite(6, LOW);
-  digitalWrite(7, LOW);
-  digitalWrite(9, LOW);
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, HIGH);
+  digitalWrite(8, HIGH);
 }
-else if (takt == 4) {
+else if (takt == 2) {   // 2
+  digitalWrite(2, LOW);
+  digitalWrite(3, LOW);
+  digitalWrite(4, HIGH);
+  digitalWrite(5, LOW);
   digitalWrite(6, LOW);
-  digitalWrite(7, LOW);
-  digitalWrite(9, LOW);
+  digitalWrite(7, HIGH);
+  digitalWrite(8, LOW);
 }
-else if (takt == 8) {
+else if (takt == 4) {   // 4
+  digitalWrite(2, HIGH);
+  digitalWrite(3, LOW);
+  digitalWrite(4, LOW);
+  digitalWrite(5, HIGH);
+  digitalWrite(6, HIGH);
+  digitalWrite(7, LOW);
+  digitalWrite(8, LOW);
+}
+else if (takt == 8) {   // 8
   digitalWrite(2, LOW);
   digitalWrite(3, LOW);
   digitalWrite(4, LOW);
@@ -66,15 +77,16 @@ else if (takt == 8) {
   digitalWrite(6, LOW);
   digitalWrite(7, LOW);
   digitalWrite(8, LOW);
-  digitalWrite(9, LOW);
 }
-else if (takt == 16) {
+else if (takt == 16) {  // E
   digitalWrite(2, LOW);
-  digitalWrite(4, LOW);
+  digitalWrite(3, HIGH);
+  digitalWrite(4, HIGH);
   digitalWrite(5, LOW);
   digitalWrite(6, LOW);
   digitalWrite(7, LOW);
-  digitalWrite(9, LOW);
+  digitalWrite(8, LOW);
 }
+
     }
   }
