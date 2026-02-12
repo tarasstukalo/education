@@ -25,7 +25,7 @@ void loop() {
     else if (takt == 1) takt = 2;
     else if (takt == 2) takt = 4;
     else if (takt == 4) takt = 8;
-    else if (takt == 8) takt = 15;   // F
+    else if (takt == 8) takt = 16;   // G
     else takt = 0;
 
     delay(200);
@@ -46,59 +46,65 @@ void loop() {
       digitalWrite(i, HIGH);
     }
 
-        if (takt == 0) {
-          digitalWrite(2, LOW);
-          digitalWrite(3, LOW);
-          digitalWrite(4, LOW);
-          digitalWrite(5, LOW);
-          digitalWrite(6, LOW);
-          digitalWrite(7, LOW);
-          digitalWrite(8, HIGH);
-      }
-      else if (takt == 1) {
-        digitalWrite(2, HIGH);
-        digitalWrite(3, LOW);
-        digitalWrite(4, LOW);
-        digitalWrite(5, HIGH);
-        digitalWrite(6, HIGH);
-        digitalWrite(7, HIGH);
-        digitalWrite(8, HIGH);
-      }
-      else if (takt == 2) {
-        digitalWrite(2, LOW);
-        digitalWrite(3, LOW);
-        digitalWrite(4, HIGH);
-        digitalWrite(5, LOW);
-        digitalWrite(6, LOW);
-        digitalWrite(7, HIGH);
-        digitalWrite(8, LOW);
-      }
-      else if (takt == 4) {
-        digitalWrite(2, HIGH);
-        digitalWrite(3, LOW);
-        digitalWrite(4, LOW);
-        digitalWrite(5, HIGH);
-        digitalWrite(6, HIGH);
-        digitalWrite(7, LOW);
-        digitalWrite(8, LOW);
-      }
-      else if (takt == 8) {
-        digitalWrite(2, LOW);
-        digitalWrite(3, LOW);
-        digitalWrite(4, LOW);
-        digitalWrite(5, LOW);
-        digitalWrite(6, LOW);
-        digitalWrite(7, LOW);
-        digitalWrite(8, LOW);
-      }
-      else if (takt == 15) {
-        digitalWrite(2, LOW);
-        digitalWrite(3, HIGH);
-        digitalWrite(4, HIGH);
-        digitalWrite(5, HIGH);
-        digitalWrite(6, LOW);
-        digitalWrite(7, LOW);
-        digitalWrite(8, LOW);
-      }
+    // 0
+    if (takt == 0) {
+      digitalWrite(2, LOW);
+      digitalWrite(3, LOW);
+      digitalWrite(4, LOW);
+      digitalWrite(5, LOW);
+      digitalWrite(6, LOW);
+      digitalWrite(7, LOW);
+      digitalWrite(8, HIGH);
+    }
+    // 1
+    else if (takt == 1) {
+      digitalWrite(2, HIGH);
+      digitalWrite(3, LOW);
+      digitalWrite(4, LOW);
+      digitalWrite(5, HIGH);
+      digitalWrite(6, HIGH);
+      digitalWrite(7, HIGH);
+      digitalWrite(8, HIGH);
+    }
+    // 2
+    else if (takt == 2) {
+      digitalWrite(2, LOW);
+      digitalWrite(3, LOW);
+      digitalWrite(4, HIGH);
+      digitalWrite(5, LOW);
+      digitalWrite(6, LOW);
+      digitalWrite(7, HIGH);
+      digitalWrite(8, LOW);
+    }
+    // 4
+    else if (takt == 4) {
+      digitalWrite(2, HIGH);
+      digitalWrite(3, LOW);
+      digitalWrite(4, LOW);
+      digitalWrite(5, HIGH);
+      digitalWrite(6, HIGH);
+      digitalWrite(7, LOW);
+      digitalWrite(8, LOW);
+    }
+    // 8
+    else if (takt == 8) {
+      digitalWrite(2, LOW);
+      digitalWrite(3, LOW);
+      digitalWrite(4, LOW);
+      digitalWrite(5, LOW);
+      digitalWrite(6, LOW);
+      digitalWrite(7, LOW);
+      digitalWrite(8, LOW);
+    }
+    // G
+    else if (takt == 16) {
+      digitalWrite(2, LOW);   // A
+      digitalWrite(3, HIGH);  // B
+      digitalWrite(4, LOW);   // C
+      digitalWrite(5, LOW);   // D
+      digitalWrite(6, LOW);   // E
+      digitalWrite(7, LOW);   // F
+      digitalWrite(8, LOW);   // G
+    }
   }
 }
