@@ -10,7 +10,7 @@ bool lastButton = HIGH;
 void setup() {
   pinMode(10, OUTPUT);
 
-  for (int i = 2; i <= 9; i++) {
+  for (int i = 2; i < 13; i++) {
     pinMode(i, OUTPUT);
   }
 
@@ -55,6 +55,7 @@ void loop() {
       digitalWrite(6, LOW);
       digitalWrite(7, LOW);
       digitalWrite(8, HIGH);
+      digitalWrite(12, HIGH);
     }
     // 1
     else if (takt == 1) {
@@ -65,6 +66,7 @@ void loop() {
       digitalWrite(6, HIGH);
       digitalWrite(7, HIGH);
       digitalWrite(8, HIGH);
+      digitalWrite(12, HIGH);
     }
     // 2
     else if (takt == 2) {
@@ -75,6 +77,7 @@ void loop() {
       digitalWrite(6, LOW);
       digitalWrite(7, HIGH);
       digitalWrite(8, LOW);
+      digitalWrite(12, HIGH);
     }
     // 4
     else if (takt == 4) {
@@ -85,6 +88,7 @@ void loop() {
       digitalWrite(6, HIGH);
       digitalWrite(7, LOW);
       digitalWrite(8, LOW);
+      digitalWrite(12, HIGH);
     }
     // 8
     else if (takt == 8) {
@@ -95,6 +99,7 @@ void loop() {
       digitalWrite(6, LOW);
       digitalWrite(7, LOW);
       digitalWrite(8, LOW);
+      digitalWrite(12, HIGH);
     }
     // G
     else if (takt == 16) {
@@ -105,6 +110,8 @@ void loop() {
       digitalWrite(6, LOW);   // E
       digitalWrite(7, LOW);   // F
       digitalWrite(8, LOW);   // G
+      digitalWrite(12, LOW);   // 1
+
     }
   }
 }
