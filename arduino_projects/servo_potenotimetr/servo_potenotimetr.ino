@@ -1,15 +1,13 @@
-#include <Servo.h>
+int potPin = A0;   // А0 — вхід з потенціометра
+int ledPin = 9;    // PWM вихід для керування яскравістю
 
-Servo myServo;
-int potPin = A0;
-int servoPin = 8;
 void setup() {
-  myServo.attach(servoPin);
+  pinMode(ledPin, OUTPUT);
 }
 
 void loop() {
-  int potValue = analogRead(potPin);
-  int angle = round(potValue / 5.7);
-  myServo.write(angle);
-  delay(20);
+  int potValue = analogRead(potPin);        // читаємо значення 0–1023
+  int brightness = map(potValue, 0, 1023, 0, 255); // перетворюємо на 0–255
+
+  analogWrite(ledPin, brightness);          // встановлюємо яскравість LED
 }

@@ -1,5 +1,8 @@
-void setup() {  
+int x = 0;
+
+void setup() {
   Serial.begin(9600);
+  Serial.setTimeout(100);
   pinMode(2, OUTPUT);
   pinMode(3, OUTPUT);
   pinMode(4, OUTPUT);
@@ -10,9 +13,10 @@ void setup() {
 }
 
 void loop() {
-  for (int i = 0; i <= 15; i++) {
-    
-    if (i == 0) {
+  if (Serial.available()) {
+    x = Serial.readString().toInt();
+
+    if (x == 0) {
       Serial.println("0x3F: 111111");
       digitalWrite(2, LOW); 
       digitalWrite(3, LOW);
@@ -22,7 +26,7 @@ void loop() {
       digitalWrite(7, LOW);
       digitalWrite(8, HIGH);
     }
-    else if (i == 1) {
+    else if (x == 1) {
       Serial.println("0x06: 110");
       digitalWrite(2, HIGH);
       digitalWrite(3, LOW);
@@ -32,7 +36,7 @@ void loop() {
       digitalWrite(7, HIGH);
       digitalWrite(8, HIGH);
     }
-    else if (i == 2) {
+    else if (x == 2) {
       Serial.println("0x5B: 1011011");
       digitalWrite(2, LOW);
       digitalWrite(3, LOW);
@@ -42,7 +46,7 @@ void loop() {
       digitalWrite(7, HIGH);
       digitalWrite(8, LOW);
     }
-    else if (i == 3) {
+    else if (x == 3) {
       Serial.println("0x4F: 1001111");
       digitalWrite(2, LOW);
       digitalWrite(3, LOW);
@@ -52,7 +56,7 @@ void loop() {
       digitalWrite(7, HIGH);
       digitalWrite(8, LOW);
     }
-    else if (i == 4) {
+    else if (x == 4) {
       Serial.println("0x66: 1100110");
       digitalWrite(2, HIGH);
       digitalWrite(3, LOW);
@@ -62,7 +66,7 @@ void loop() {
       digitalWrite(7, LOW);
       digitalWrite(8, LOW);
     }
-    else if (i == 5) {
+    else if (x == 5) {
       Serial.println("0x6D: 1101101");
       digitalWrite(2, LOW);
       digitalWrite(3, HIGH);
@@ -72,7 +76,7 @@ void loop() {
       digitalWrite(7, LOW);
       digitalWrite(8, LOW);
     }
-    else if (i == 6) {
+    else if (x == 6) {
       Serial.println("0x7D: 1111101");
       digitalWrite(2, LOW);
       digitalWrite(3, HIGH);
@@ -82,7 +86,7 @@ void loop() {
       digitalWrite(7, LOW);
       digitalWrite(8, LOW);
     }
-    else if (i == 7) {
+    else if (x == 7) {
       Serial.println("0x07: 111");
       digitalWrite(2, LOW);
       digitalWrite(3, LOW);
@@ -92,7 +96,7 @@ void loop() {
       digitalWrite(7, HIGH);
       digitalWrite(8, HIGH);
     }
-    else if (i == 8) {
+    else if (x == 8) {
       Serial.println("0x7F: 1111111");
       digitalWrite(2, LOW);
       digitalWrite(3, LOW);
@@ -102,7 +106,7 @@ void loop() {
       digitalWrite(7, LOW);
       digitalWrite(8, LOW);
     }
-    else if (i == 9) {
+    else if (x == 9) {
       Serial.println("0x6F: 1101111");
       digitalWrite(2, LOW);
       digitalWrite(3, LOW);
@@ -112,7 +116,7 @@ void loop() {
       digitalWrite(7, LOW);
       digitalWrite(8, LOW);
     }
-    else if (i == 10) { // A
+    else if (x == 10) { // A
       Serial.println("0x77: 1110111");
       digitalWrite(2, LOW);
       digitalWrite(3, LOW);
@@ -122,7 +126,7 @@ void loop() {
       digitalWrite(7, LOW);
       digitalWrite(8, LOW);
     }
-    else if (i == 11) { // b
+    else if (x == 11) { // b
       Serial.println("0x7C: 1111100");
       digitalWrite(2, HIGH);
       digitalWrite(3, HIGH);
@@ -132,7 +136,7 @@ void loop() {
       digitalWrite(7, LOW);
       digitalWrite(8, LOW);
     }
-    else if (i == 12) { // c
+    else if (x == 12) { // c
       Serial.println("0x39: 111001");
       digitalWrite(2, LOW);
       digitalWrite(3, HIGH);
@@ -142,7 +146,7 @@ void loop() {
       digitalWrite(7, LOW);
       digitalWrite(8, HIGH);
     }
-    else if (i == 13) { // d
+    else if (x == 13) { // d
       Serial.println("0x5E: 1011110");
       digitalWrite(2, HIGH);
       digitalWrite(3, LOW);
@@ -152,7 +156,7 @@ void loop() {
       digitalWrite(7, HIGH);
       digitalWrite(8, LOW);
     }
-    else if (i == 14) { // E
+    else if (x == 14) { // E
       Serial.println("0x79: 1111001");
       digitalWrite(2, LOW);
       digitalWrite(3, HIGH);
@@ -172,7 +176,5 @@ void loop() {
       digitalWrite(7, LOW);
       digitalWrite(8, LOW);
     }
-
-    delay(1000);
   }
 }
